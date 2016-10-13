@@ -13,6 +13,9 @@
 		1EE6D1161DAD924D006EBDBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE6D1141DAD924D006EBDBF /* LaunchScreen.storyboard */; };
 		1EE6D11E1DAD928B006EBDBF /* GameOfThronesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6D11D1DAD928B006EBDBF /* GameOfThronesTableViewController.swift */; };
 		1EE6D1201DAD9310006EBDBF /* got.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EE6D11F1DAD9310006EBDBF /* got.json */; };
+		EDD4D0A61DAE8FBF0050C3CF /* GOTEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4D0A51DAE8FBF0050C3CF /* GOTEpisode.swift */; };
+		EDD4D0AD1DAEA3100050C3CF /* GOTEpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4D0AC1DAEA3100050C3CF /* GOTEpisodeTableViewCell.swift */; };
+		EDD4D0AF1DAEC0B50050C3CF /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4D0AE1DAEC0B50050C3CF /* EpisodeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1EE6D1171DAD924D006EBDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EE6D11D1DAD928B006EBDBF /* GameOfThronesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOfThronesTableViewController.swift; path = "AC3.2-GameOfThrones/GameOfThronesTableViewController.swift"; sourceTree = "<group>"; };
 		1EE6D11F1DAD9310006EBDBF /* got.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = got.json; sourceTree = "<group>"; };
+		EDD4D0A51DAE8FBF0050C3CF /* GOTEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisode.swift; sourceTree = "<group>"; };
+		EDD4D0AC1DAEA3100050C3CF /* GOTEpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GOTEpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		EDD4D0AE1DAEC0B50050C3CF /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +46,9 @@
 		1EE6D0FF1DAD924C006EBDBF = {
 			isa = PBXGroup;
 			children = (
-				1EE6D11D1DAD928B006EBDBF /* GameOfThronesTableViewController.swift */,
+				EDD4D0A71DAE8FE60050C3CF /* Model */,
+				EDD4D0A81DAE90130050C3CF /* Controler */,
+				EDD4D0A91DAE90230050C3CF /* View */,
 				1EE6D10A1DAD924D006EBDBF /* AC3.2-GameOfThrones */,
 				1EE6D1091DAD924D006EBDBF /* Products */,
 			);
@@ -58,12 +66,38 @@
 			isa = PBXGroup;
 			children = (
 				1EE6D10B1DAD924D006EBDBF /* AppDelegate.swift */,
-				1EE6D10F1DAD924D006EBDBF /* Main.storyboard */,
 				1EE6D11F1DAD9310006EBDBF /* got.json */,
 				1EE6D1121DAD924D006EBDBF /* Assets.xcassets */,
-				1EE6D1141DAD924D006EBDBF /* LaunchScreen.storyboard */,
 				1EE6D1171DAD924D006EBDBF /* Info.plist */,
 			);
+			path = "AC3.2-GameOfThrones";
+			sourceTree = "<group>";
+		};
+		EDD4D0A71DAE8FE60050C3CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4D0A51DAE8FBF0050C3CF /* GOTEpisode.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDD4D0A81DAE90130050C3CF /* Controler */ = {
+			isa = PBXGroup;
+			children = (
+				EDD4D0AE1DAEC0B50050C3CF /* EpisodeDetailViewController.swift */,
+				1EE6D11D1DAD928B006EBDBF /* GameOfThronesTableViewController.swift */,
+				EDD4D0AC1DAEA3100050C3CF /* GOTEpisodeTableViewCell.swift */,
+			);
+			name = Controler;
+			sourceTree = "<group>";
+		};
+		EDD4D0A91DAE90230050C3CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EE6D10F1DAD924D006EBDBF /* Main.storyboard */,
+				1EE6D1141DAD924D006EBDBF /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			path = "AC3.2-GameOfThrones";
 			sourceTree = "<group>";
 		};
@@ -99,6 +133,7 @@
 				TargetAttributes = {
 					1EE6D1071DAD924C006EBDBF = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7NBTE6SY4Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,8 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD4D0AF1DAEC0B50050C3CF /* EpisodeDetailViewController.swift in Sources */,
 				1EE6D11E1DAD928B006EBDBF /* GameOfThronesTableViewController.swift in Sources */,
 				1EE6D10C1DAD924D006EBDBF /* AppDelegate.swift in Sources */,
+				EDD4D0AD1DAEA3100050C3CF /* GOTEpisodeTableViewCell.swift in Sources */,
+				EDD4D0A61DAE8FBF0050C3CF /* GOTEpisode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7NBTE6SY4Z;
 				INFOPLIST_FILE = "AC3.2-GameOfThrones/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.jasongresh.AC3-2-GameOfThrones";
@@ -276,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7NBTE6SY4Z;
 				INFOPLIST_FILE = "AC3.2-GameOfThrones/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.jasongresh.AC3-2-GameOfThrones";
@@ -303,6 +343,7 @@
 				1EE6D11C1DAD924D006EBDBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

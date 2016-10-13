@@ -10,18 +10,21 @@
         <scene sceneID="sjx-cT-F0W">
             <objects>
                 <tableViewController id="W4q-qE-EWG" customClass="GameOfThronesTableViewController" customModule="AC3_2_GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oAx-B9-1iZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="oAx-B9-1iZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Gzx-2j-BOY">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GOTEpisodeTableViewCell" rowHeight="70" id="Gzx-2j-BOY" customClass="GOTEpisodeTableViewCell" customModule="AC3_2_GameOfThrones" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gzx-2j-BOY" id="jys-lM-aJJ">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ysn-to-4v9" kind="show" identifier="EpisodeDetailSegue" id="NKX-kG-ckJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +36,98 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orb-fK-tUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="160"/>
+            <point key="canvasLocation" x="1012" y="158.77061469265368"/>
+        </scene>
+        <!--Episode Detail View Controller-->
+        <scene sceneID="aWj-O5-nGh">
+            <objects>
+                <viewController id="ysn-to-4v9" customClass="EpisodeDetailViewController" customModule="AC3_2_GameOfThrones" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="chc-ZP-Sqn"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Gu-z1-UL9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="woz-8a-IBe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjC-7c-xhC">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG4-Hd-KZ2">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwT-cw-KWR">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-cF-oB0">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="THo-CY-M2A">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="ZSF-Cg-G5A"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdr-mg-LcE">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUa-VC-gXf">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="9hH-nF-5yE"/>
+                                            <constraint firstAttribute="height" constant="60" id="pFk-Rk-1Ur"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="icon"/>
+                                        <connections>
+                                            <action selector="homePageButton:" destination="ysn-to-4v9" eventType="touchUpInside" id="5HS-QB-JTX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7rY-cF-oB0" firstAttribute="centerX" secondItem="FjC-7c-xhC" secondAttribute="centerX" id="0kl-vx-3fN"/>
+                                    <constraint firstItem="THo-CY-M2A" firstAttribute="centerX" secondItem="FjC-7c-xhC" secondAttribute="centerX" id="6oT-Ee-U0T"/>
+                                    <constraint firstItem="THo-CY-M2A" firstAttribute="top" secondItem="xdr-mg-LcE" secondAttribute="bottom" constant="15" id="CUy-Si-OBK"/>
+                                    <constraint firstItem="7rY-cF-oB0" firstAttribute="top" secondItem="THo-CY-M2A" secondAttribute="bottom" constant="20" id="D1L-ft-mRr"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rY-cF-oB0" secondAttribute="bottom" constant="30" id="IZ3-q2-09O"/>
+                                    <constraint firstItem="AG4-Hd-KZ2" firstAttribute="centerX" secondItem="FjC-7c-xhC" secondAttribute="centerX" id="M6Z-85-nrC"/>
+                                    <constraint firstItem="gwT-cw-KWR" firstAttribute="top" secondItem="AG4-Hd-KZ2" secondAttribute="bottom" constant="20" id="Rdx-we-TNX"/>
+                                    <constraint firstItem="xdr-mg-LcE" firstAttribute="top" secondItem="gwT-cw-KWR" secondAttribute="bottom" constant="10" id="Uzq-dc-i3B"/>
+                                    <constraint firstItem="AG4-Hd-KZ2" firstAttribute="top" secondItem="FjC-7c-xhC" secondAttribute="top" id="diR-jh-0eb"/>
+                                    <constraint firstAttribute="trailing" secondItem="7rY-cF-oB0" secondAttribute="trailing" constant="10" id="fcf-6u-0GH"/>
+                                    <constraint firstItem="IUa-VC-gXf" firstAttribute="top" secondItem="AG4-Hd-KZ2" secondAttribute="bottom" constant="20" id="gI8-DK-lhp"/>
+                                    <constraint firstItem="IUa-VC-gXf" firstAttribute="centerX" secondItem="FjC-7c-xhC" secondAttribute="centerX" constant="-100" id="gRH-5h-nzy"/>
+                                    <constraint firstItem="xdr-mg-LcE" firstAttribute="leading" secondItem="IUa-VC-gXf" secondAttribute="trailing" constant="20" id="nFa-cV-VHW"/>
+                                    <constraint firstItem="7rY-cF-oB0" firstAttribute="leading" secondItem="FjC-7c-xhC" secondAttribute="leading" constant="10" id="rnW-Ob-Uyq"/>
+                                    <constraint firstItem="gwT-cw-KWR" firstAttribute="leading" secondItem="IUa-VC-gXf" secondAttribute="trailing" constant="20" id="xTB-Mg-nKu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FjC-7c-xhC" firstAttribute="leading" secondItem="woz-8a-IBe" secondAttribute="leading" id="EOK-4F-EHu"/>
+                            <constraint firstAttribute="trailing" secondItem="FjC-7c-xhC" secondAttribute="trailing" id="PYu-0J-CaI"/>
+                            <constraint firstItem="1Gu-z1-UL9" firstAttribute="top" secondItem="FjC-7c-xhC" secondAttribute="bottom" id="T2U-sb-sqp"/>
+                            <constraint firstItem="THo-CY-M2A" firstAttribute="width" secondItem="woz-8a-IBe" secondAttribute="width" id="nAB-lb-70i"/>
+                            <constraint firstItem="FjC-7c-xhC" firstAttribute="top" secondItem="chc-ZP-Sqn" secondAttribute="bottom" id="reR-xd-Q2S"/>
+                            <constraint firstItem="FjC-7c-xhC" firstAttribute="centerX" secondItem="woz-8a-IBe" secondAttribute="centerX" id="vFy-xA-WZD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="gwT-cw-KWR" id="FfN-qE-jOO"/>
+                        <outlet property="episodeImage" destination="THo-CY-M2A" id="ZMZ-qG-T4T"/>
+                        <outlet property="seasonLabel" destination="xdr-mg-LcE" id="UX9-gN-Iqd"/>
+                        <outlet property="summaryLabel" destination="7rY-cF-oB0" id="INi-fI-B4a"/>
+                        <outlet property="titleLabel" destination="AG4-Hd-KZ2" id="UXq-c3-5fG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ol-Lu-2Ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="158.77061469265368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KzA-EL-rAA">
@@ -52,4 +146,7 @@
             <point key="canvasLocation" x="60" y="160"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="400" height="400"/>
+    </resources>
 </document>
